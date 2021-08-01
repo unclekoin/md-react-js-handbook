@@ -11,7 +11,6 @@
 1. [useContext()](./content/hooks/02-use-context.md)
 1. [useEffect()](./content/hooks/03-use-effect.md)
 #### Additional Hooks
-7. [useCallback](./content/hooks/05-use-callback.md)
-1. [useMemo](./content/hooks/06-use-memo.md)
-
+7. [useCallback()](./content/hooks/05-use-callback.md)
+1. [useMemo()](./content/hooks/06-use-memo.md)
 1. [Build Your Own Hooks](./content/hooks/04-custom-hooks.md)
