@@ -8,3 +8,4 @@
 3. [useState()](./content/hooks/01-use-state.md)
 1. [useContext()](./content/hooks/02-use-context.md)
 1. [useEffect()](./content/hooks/03-use-effect.md)
+1. [Custom Hooks](./content/hooks/04-custom-hooks.md)
