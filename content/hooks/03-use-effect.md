@@ -69,7 +69,7 @@ class ClassCounter extends Component {
 
 ReactDOM.render(<App/>, document.getElementById("root"));
 ```
-## Example
+### Example
 ```js
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
@@ -106,7 +106,7 @@ const Notification = () => {
 
 ReactDOM.render(<App/>, document.getElementById("root"));
 ```
-## Example. Avoiding Race Conditions when Fetching Data with React Hooks
+### Example. Avoiding Race Conditions when Fetching Data with React Hooks
 ```js
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";

@@ -44,14 +44,14 @@ ReactDOM.render( <App />, document.getElementById('root'));
 ```
 ```js
 const Person = () => {
-  const [firstName, serFirstName] = useState('Bob');
-  const [lastName, serLastName] = useState('Smith');
+  const [firstName, setFirstName] = useState('Bob');
+  const [lastName, setLastName] = useState('Smith');
   
   serFirstName('Mike');
 }
 
 const Person = () => {
-  const [person, serPerson] = useState({
+  const [person, setPerson] = useState({
     firstName: 'Bob',
     lastName: 'Smith'
   });
