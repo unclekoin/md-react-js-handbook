@@ -1,5 +1,5 @@
 [&#8678; go back to the table of contents](../../README.md)
-# Custom Hooks
+# Build Your Own Hooks
 
 ```js
 import React, { useEffect, useState } from "react";
