@@ -23,33 +23,29 @@ const App = () => {
 }
 
 const HookCounter = ({ value }) => {
-```
-*Analog of componentDidUpdate()*
-```js
+
+  // Similar to  componentDidUpdate()
   useEffect(() => {
     console.log('useEffect');
   });
-```
-*Analog of componentDidMount()*
-```js
+
+  // Similar to componentDidMount()
   useEffect(() => {
     console.log('useEffect');
   }, []);
-```
-*Monitor changes in value*
-```js
+
+  // Monitor changes in value
   useEffect(() => {
     console.log('useEffect');
   }, [value]);
-```
-*cleanup useEffect()*
-```js
+
+  // Cleanup useEffect() 
+  // Similar to componentWillUnmount()
   useEffect(() => {
     console.log('useEffect');
     return () => console.log('cleanup');
   }, [value])
-```
-```js
+
   return <div>{ value }</div>
 }
 
@@ -72,4 +68,80 @@ class ClassCounter extends Component {
 }
 
 ReactDOM.render(<App/>, document.getElementById("root"));
+```
+## Example
+```js
+import React, {useEffect, useState} from "react";
+import ReactDOM from "react-dom";
+
+const App = () => {
+  const [visible, setVisible] = useState(true);
+
+  if (visible) {
+    return (
+      <div>
+        <button onClick={() => setVisible(false)}>hide</button>
+        <Notification/>
+      </div>
+    )
+  } else {
+    return <button onClick={() => setVisible(true)}>show</button>
+  }
+}
+
+const Notification = () => {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const timeout = setInterval(() => setVisible(false), 3000);
+    return () => clearTimeout(timeout);
+  }, [])
+  
+  return (
+    <div>
+      { visible && <p>Hello World!</p> }
+    </div>
+  )
+}
+
+ReactDOM.render(<App/>, document.getElementById("root"));
+```
+## Example. Avoiding Race Conditions when Fetching Data with React Hooks
+```js
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom";
+
+const App = () => {
+  const [value, setValue] = useState(1);
+
+  return (
+    <div>
+      <button onClick={ () => setValue((v) => v < 10 ? v + 1 : 1) }>
+        +
+      </button>
+      <UserInfo id={ value }/>
+    </div>
+  )
+}
+
+const UserInfo = ({ id }) => {
+
+  const [name, setName] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`https://jsonplaceholder.typicode.com/users/${ id }`)
+      .then(res => res.json())
+      .then(data => !cancelled && setName(data.name))
+      .catch(error => console.log(error));
+    return () => cancelled = true;
+  }, [id]);
+
+  return (
+    <div>{ id } - { name }</div>
+  )
+}
+
+ReactDOM.render(<App/>, document.getElementById("root"));
+
 ```
