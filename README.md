@@ -14,3 +14,7 @@
 7. [useCallback()](./content/hooks/05-use-callback.md)
 1. [useMemo()](./content/hooks/06-use-memo.md)
 1. [Build Your Own Hooks](./content/hooks/04-custom-hooks.md)
+
+### Examples
+10. [Change State](./content/examples/state.md)
+1. [Filter Data](./content/examples/input-filter-list.md)
