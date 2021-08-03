@@ -18,3 +18,4 @@
 ### Examples
 10. [Change State](./content/examples/state.md)
 1. [Filter Data](./content/examples/input-filter-list.md)
+1. [Filter Data Hooks](./content/examples/input-search-hooks.md)

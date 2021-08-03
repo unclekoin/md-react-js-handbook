@@ -1,4 +1,4 @@
-[&#8678; go back to the table of contents](../README.md)
+[&#8678; go back to the table of contents](../../README.md)
 # Filter Data / input / onChange
 
 ```js
@@ -66,7 +66,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: ['test'],
+      data: [],
       filteredData: []
     };
 

@@ -1,4 +1,4 @@
-[&#8678; go back to the table of contents](../README.md)
+[&#8678; go back to the table of contents](../../README.md)
 # Change State / button / onClick
 ```js
 // index.js
